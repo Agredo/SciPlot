@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Core", "SciPlot.Core\SciPlot.Core.csproj", "{0C211B55-6E77-45D5-96CA-93E362591894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Core.Charts.Chemistry", "SciPlot.Core.Chemistry\SciPlot.Core.Charts.Chemistry.csproj", "{32B7CDF5-B96F-4599-B034-189DB6B5E704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Maui", "SciPlot.Maui\SciPlot.Maui.csproj", "{F9DA1ACD-41A6-41C0-96FB-D732F8FF6338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Core.Charts", "SciPlot.Core.Charts\SciPlot.Core.Charts.csproj", "{56002D72-45A8-4F45-98D0-688BB901326F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Maui.Charts", "SciPlot.Maui.Charts\SciPlot.Maui.Charts.csproj", "{7A59D79A-30D8-4C19-807B-31E562F5BB6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciPlot.Maui.Charts.Chemistry", "SciPlot.Maui.Charts.Chemistry\SciPlot.Maui.Charts.Chemistry.csproj", "{CE5A6345-ADD3-437C-A941-02EFBBA11C8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{D8853E83-1CD5-48D8-BF5C-8A5AE981F0D0}"
+	ProjectSection(SolutionItems) = preProject
+		CleanBinObj.bat = CleanBinObj.bat
+		projects.props = projects.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C211B55-6E77-45D5-96CA-93E362591894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C211B55-6E77-45D5-96CA-93E362591894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C211B55-6E77-45D5-96CA-93E362591894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C211B55-6E77-45D5-96CA-93E362591894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B7CDF5-B96F-4599-B034-189DB6B5E704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B7CDF5-B96F-4599-B034-189DB6B5E704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B7CDF5-B96F-4599-B034-189DB6B5E704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B7CDF5-B96F-4599-B034-189DB6B5E704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9DA1ACD-41A6-41C0-96FB-D732F8FF6338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9DA1ACD-41A6-41C0-96FB-D732F8FF6338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9DA1ACD-41A6-41C0-96FB-D732F8FF6338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9DA1ACD-41A6-41C0-96FB-D732F8FF6338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56002D72-45A8-4F45-98D0-688BB901326F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56002D72-45A8-4F45-98D0-688BB901326F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56002D72-45A8-4F45-98D0-688BB901326F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56002D72-45A8-4F45-98D0-688BB901326F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A59D79A-30D8-4C19-807B-31E562F5BB6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A59D79A-30D8-4C19-807B-31E562F5BB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A59D79A-30D8-4C19-807B-31E562F5BB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A59D79A-30D8-4C19-807B-31E562F5BB6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5A6345-ADD3-437C-A941-02EFBBA11C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5A6345-ADD3-437C-A941-02EFBBA11C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5A6345-ADD3-437C-A941-02EFBBA11C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5A6345-ADD3-437C-A941-02EFBBA11C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51BED5B5-D8ED-460A-944E-DE92184359D2}
+	EndGlobalSection
+EndGlobal
