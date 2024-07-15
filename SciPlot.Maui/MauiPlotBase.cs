@@ -198,7 +198,10 @@ public abstract class MauiPlotBase : View, IPlot
         set => SetValue(AutoScaleYProperty, value);
     }
 
-
-
     public abstract void Draw(SKCanvas canvas, SKRect bounds);
+
+    public bool HitTest(SKPoint point, out IDataPoint hitPoint, out IDataSeries hitSeries)
+    {
+        return this.HitTest(point, out hitPoint, out hitSeries);
+    }
 }
