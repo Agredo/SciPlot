@@ -1,6 +1,4 @@
-﻿
-using SciPlot.Core;
-using SkiaSharp;
+﻿using SkiaSharp;
 using MassSpektrumCore = SciPlot.Core.Chemistry.MassSpektrum;
 
 namespace SciPlot.Maui.Charts.Chemistry;
@@ -9,10 +7,6 @@ namespace SciPlot.Maui.Charts.Chemistry;
 public class MassSpektrum : MauiPlotBase
 {
     private readonly MassSpektrumCore coreMassSpektrum = new MassSpektrumCore();
-
-    public MassSpektrum(PlotBase corePlot) : base(corePlot)
-    {
-    }
 
     public override void Draw(SKCanvas canvas, SKRect bounds)
     {

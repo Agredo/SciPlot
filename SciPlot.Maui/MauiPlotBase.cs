@@ -5,102 +5,95 @@ namespace SciPlot.Maui;
 
 public abstract class MauiPlotBase : View, IPlot
 {
-    protected readonly PlotBase CorePlot;
-
-    public MauiPlotBase(PlotBase corePlot)
-    {
-        CorePlot = corePlot;
-    }
-
     //Bindable Properties
     public static readonly BindableProperty DataSourceProperty = BindableProperty.Create(
         nameof(DataSource), typeof(IDataSource), typeof(MauiPlotBase), null, propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.DataSource = (IDataSource)newValue);
+                ((MauiPlotBase)bindable).DataSource = (IDataSource)newValue);
 
     public static readonly BindableProperty TitleProperty =
         BindableProperty.Create(nameof(Title), typeof(string), typeof(MauiPlotBase), string.Empty,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.Title = (string)newValue);
+                ((MauiPlotBase)bindable).Title = (string)newValue);
 
     public static readonly BindableProperty XAxisTitleProperty =
         BindableProperty.Create(nameof(XAxisTitle), typeof(string), typeof(MauiPlotBase), string.Empty,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.XAxisTitle = (string)newValue);
+                ((MauiPlotBase)bindable).XAxisTitle = (string)newValue);
 
     public static readonly BindableProperty YAxisTitleProperty =
         BindableProperty.Create(nameof(YAxisTitle), typeof(string), typeof(MauiPlotBase), string.Empty,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.YAxisTitle = (string)newValue);
+                ((MauiPlotBase)bindable).YAxisTitle = (string)newValue);
 
     public static readonly BindableProperty PlotAreaBackgroundColorProperty =
         BindableProperty.Create(nameof(PlotAreaBackgroundColor), typeof(SKColor), typeof(MauiPlotBase), SKColors.Transparent,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.PlotAreaBackgroundColor = (SKColor)newValue);
+                ((MauiPlotBase)bindable).PlotAreaBackgroundColor = (SKColor)newValue);
 
     public static readonly BindableProperty GridLineColorProperty =
         BindableProperty.Create(nameof(GridLineColor), typeof(SKColor), typeof(MauiPlotBase), SKColors.LightGray,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.GridLineColor = (SKColor)newValue);
+                ((MauiPlotBase)bindable).GridLineColor = (SKColor)newValue);
 
     public static readonly BindableProperty GridLineThicknessProperty =
         BindableProperty.Create(nameof(GridLineThickness), typeof(float), typeof(MauiPlotBase), 1f,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.GridLineThickness = (float)newValue);
+                ((MauiPlotBase)bindable).GridLineThickness = (float)newValue);
 
     public static readonly BindableProperty ShowLegendProperty =
         BindableProperty.Create(nameof(ShowLegend), typeof(bool), typeof(MauiPlotBase), true,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.ShowLegend = (bool)newValue);
+                ((MauiPlotBase)bindable).ShowLegend = (bool)newValue);
 
     public static readonly BindableProperty LegendPositionProperty =
         BindableProperty.Create(nameof(LegendPosition), typeof(LegendPosition), typeof(MauiPlotBase), LegendPosition.TopRight,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.LegendPosition = (LegendPosition)newValue);
+                ((MauiPlotBase)bindable).LegendPosition = (LegendPosition)newValue);
 
     public static readonly BindableProperty FontFamilyProperty =
         BindableProperty.Create(nameof(FontFamily), typeof(string), typeof(MauiPlotBase), string.Empty,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.FontFamily = (string)newValue);
+                ((MauiPlotBase)bindable).FontFamily = (string)newValue);
 
     public static readonly BindableProperty FontSizeProperty =
         BindableProperty.Create(nameof(FontSize), typeof(float), typeof(MauiPlotBase), 12f,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.FontSize = (float)newValue);
+                ((MauiPlotBase)bindable).FontSize = (float)newValue);
 
     public static readonly BindableProperty XAxisMinProperty =
         BindableProperty.Create(nameof(XAxisMin), typeof(double), typeof(MauiPlotBase), double.NaN,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.XAxisMin = (double)newValue);
+                ((MauiPlotBase)bindable).XAxisMin = (double)newValue);
 
     public static readonly BindableProperty XAxisMaxProperty =
         BindableProperty.Create(nameof(XAxisMax), typeof(double), typeof(MauiPlotBase), double.NaN,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.XAxisMax = (double)newValue);
+                ((MauiPlotBase)bindable).XAxisMax = (double)newValue);
 
     public static readonly BindableProperty YAxisMinProperty =
         BindableProperty.Create(nameof(YAxisMin), typeof(double), typeof(MauiPlotBase), double.NaN,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.YAxisMin = (double)newValue);
+                ((MauiPlotBase)bindable).YAxisMin = (double)newValue);
 
     public static readonly BindableProperty YAxisMaxProperty =
         BindableProperty.Create(nameof(YAxisMax), typeof(double), typeof(MauiPlotBase), double.NaN,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.YAxisMax = (double)newValue);
+                ((MauiPlotBase)bindable).YAxisMax = (double)newValue);
 
     public static readonly BindableProperty AutoScaleXProperty =
         BindableProperty.Create(nameof(AutoScaleX), typeof(bool), typeof(MauiPlotBase), true,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.AutoScaleX = (bool)newValue);
+                ((MauiPlotBase)bindable).AutoScaleX = (bool)newValue);
 
     public static readonly BindableProperty AutoScaleYProperty =
         BindableProperty.Create(nameof(AutoScaleY), typeof(bool), typeof(MauiPlotBase), true,
             propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).CorePlot.AutoScaleY = (bool)newValue);
+                ((MauiPlotBase)bindable).AutoScaleY = (bool)newValue);
 
     SKColor IPlot.BackgroundColor
     {
-        get => CorePlot.BackgroundColor;
-        set => CorePlot.BackgroundColor = value;
+        get => this.BackgroundColor.ToSkColor();
+        set => this.BackgroundColor = value.ToMauiColor();
     }
 
     public IDataSource DataSource

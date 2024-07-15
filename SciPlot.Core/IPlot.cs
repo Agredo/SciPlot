@@ -23,6 +23,8 @@ public interface IPlot
     bool AutoScaleX { get; set; }
     bool AutoScaleY { get; set; }
 
-    void Draw(SKCanvas canvas, SKRect bounds);
     IDataSource DataSource { get; set; }
+
+    void Draw(SKCanvas canvas, SKRect bounds);
+    public abstract bool HitTest(SKPoint point, out IDataPoint hitPoint, out IDataSeries hitSeries);
 }

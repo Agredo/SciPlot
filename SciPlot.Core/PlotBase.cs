@@ -24,5 +24,41 @@ public abstract class PlotBase : IPlot
 
     public IDataSource DataSource { get; set; } = default;
 
+    protected SKRect PlotBounds { get; set; }
+
     public abstract void Draw(SKCanvas canvas, SKRect bounds);
+
+    protected abstract SKPoint ConvertDataToScreenPoint(IDataPoint dataPoint);
+
+    public virtual bool HitTest(SKPoint point, out IDataPoint hitPoint, out IDataSeries hitSeries)
+    {
+        hitPoint = null;
+        hitSeries = null;
+
+        if (DataSource == null) return false;
+
+        const float hitTestTolerance = 10f; // 10 Pixel Toleranz
+
+        foreach (var series in DataSource.Series)
+        {
+            foreach (var dataPoint in series.Points)
+            {
+                SKPoint screenPoint = ConvertDataToScreenPoint(dataPoint);
+
+                if (CalculateDistance(point, screenPoint) <= hitTestTolerance)
+                {
+                    hitPoint = dataPoint;
+                    hitSeries = series;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private float CalculateDistance(SKPoint p1, SKPoint p2)
+    {
+        return (float)Math.Sqrt(Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
+    }
 }
