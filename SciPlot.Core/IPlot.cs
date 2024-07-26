@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using SciPlot.Core.ZoomStratagies;
+using SkiaSharp;
 
 namespace SciPlot.Core;
 
@@ -24,6 +25,10 @@ public interface IPlot
     bool AutoScaleY { get; set; }
 
     IDataSource DataSource { get; set; }
+
+    SKRect PlotBounds { get; set; }
+
+    IZoomStrategy ZoomStrategy { get; set; }
 
     void Draw(SKCanvas canvas, SKRect bounds);
     public abstract bool HitTest(SKPoint point, out IDataPoint hitPoint, out IDataSeries hitSeries);

@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using SciPlot.Core.ZoomStratagies;
+using SkiaSharp;
 
 namespace SciPlot.Core;
 
@@ -24,9 +25,15 @@ public abstract class PlotBase : IPlot
 
     public IDataSource DataSource { get; set; } = default;
 
-    protected SKRect PlotBounds { get; set; }
+    public SKRect PlotBounds { get; set; }
+
+    public IZoomStrategy ZoomStrategy { get; set; }
 
     public abstract void Draw(SKCanvas canvas, SKRect bounds);
+    public virtual void ApplyZoom(SKPoint zoomCenter, float zoomFactor)
+    {
+        ZoomStrategy?.ApplyZoom(this, zoomCenter, zoomFactor);
+    }
 
     protected abstract SKPoint ConvertDataToScreenPoint(IDataPoint dataPoint);
 

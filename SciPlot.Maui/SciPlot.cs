@@ -53,9 +53,9 @@ public class SciPlot : ContentView, ISciPlotController
 
     private void OnPaintSurface(object? sender, SKPaintSurfaceEventArgs e)
     {
+        Console.WriteLine("OnPaintSurface wird aufgerufen");
         var canvas = e.Surface.Canvas;
         var bounds = new SKRect(0, 0, e.Info.Width, e.Info.Height);
-
         canvas.Clear(SKColors.White);
         foreach (var plot in Plots)
         {

@@ -1,5 +1,5 @@
 ﻿using SkiaSharp;
-using MassSpektrumCore = SciPlot.Core.Chemistry.MassSpektrum;
+using MassSpektrumCore = SciPlot.Core.Chemistry.MassSpectrumChart;
 
 namespace SciPlot.Maui.Charts.Chemistry;
 

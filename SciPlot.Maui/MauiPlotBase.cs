@@ -1,14 +1,20 @@
 ﻿using SciPlot.Core;
+using SciPlot.Core.ZoomStratagies;
 using SkiaSharp;
 
 namespace SciPlot.Maui;
 
-public abstract class MauiPlotBase : View, IPlot
+public abstract class MauiPlotBase : ContentView, IPlot
 {
     //Bindable Properties
     public static readonly BindableProperty DataSourceProperty = BindableProperty.Create(
-        nameof(DataSource), typeof(IDataSource), typeof(MauiPlotBase), null, propertyChanged: (bindable, oldValue, newValue) =>
-                ((MauiPlotBase)bindable).DataSource = (IDataSource)newValue);
+        nameof(DataSource), typeof(IDataSource), typeof(MauiPlotBase), null, propertyChanged: (bindable, oldValue, newValue) => 
+        {
+            MauiPlotBase control = ((MauiPlotBase)bindable);
+
+            control.DataSource = (IDataSource)newValue;
+            
+        });
 
     public static readonly BindableProperty TitleProperty =
         BindableProperty.Create(nameof(Title), typeof(string), typeof(MauiPlotBase), string.Empty,
@@ -197,6 +203,8 @@ public abstract class MauiPlotBase : View, IPlot
         get => (bool)GetValue(AutoScaleYProperty);
         set => SetValue(AutoScaleYProperty, value);
     }
+    public SKRect PlotBounds { get; set; }
+    public IZoomStrategy ZoomStrategy { get; set; }
 
     public abstract void Draw(SKCanvas canvas, SKRect bounds);
 

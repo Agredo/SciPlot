@@ -25,7 +25,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\SciPlot.Core.Chemistry\SciPlot.Core.Charts.Chemistry.csproj" />
 	  <ProjectReference Include="..\SciPlot.Core\SciPlot.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Handler\" />
 	</ItemGroup>
 
 </Project>
